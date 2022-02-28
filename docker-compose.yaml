@@ -28,7 +28,7 @@ services:
   nginx:
     build: 
       context: ./nginx
-      dockerfile: Dockerfile.prod
+      dockerfile: Dockerfile
     image: gsoldateli/nginx:prod
     container_name: nginx
     networks:
