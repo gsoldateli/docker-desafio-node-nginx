@@ -1,5 +1,4 @@
-Desafio Node / Nginx < 2MB
-
+Desafio Node / Mysql / Nginx 
 Via docker-compose, criar uma aplicação com NodeJS / MySql / Nginx que ao acessar http://localhost:8080 :
 
 - Insere um nome no banco de dados.
@@ -7,4 +6,4 @@ Via docker-compose, criar uma aplicação com NodeJS / MySql / Nginx que ao aces
 
 ### Como rodar
 
-docker-compose up -d
+`docker-compose up -d`
