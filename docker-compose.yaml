@@ -11,9 +11,6 @@ services:
     container_name: app
     volumes:
       - ./app:/usr/src/app
-    ports:
-      - "3000:3000"
-    
     entrypoint: dockerize -wait tcp://db:3306 -timeout 20s node server.js
   db:
     image: mysql:5.7
@@ -28,16 +25,16 @@ services:
       - MYSQL_ROOT_PASSWORD=nodedb
     networks:
       - nodenetwork
-  # nginx:
-  #   build: 
-  #     context: ./nginx
-  #     dockerfile: Dockerfile.prod
-  #   image: gsoldateli/nginx:prod
-  #   container_name: nginx
-  #   networks:
-  #     - nodenetwork
-  #   ports:
-  #     - "8080:80"
+  nginx:
+    build: 
+      context: ./nginx
+      dockerfile: Dockerfile.prod
+    image: gsoldateli/nginx:prod
+    container_name: nginx
+    networks:
+      - nodenetwork
+    ports:
+      - "8080:80"
 networks:
   nodenetwork:
     driver: bridge

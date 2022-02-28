@@ -2,7 +2,7 @@ const database = require('./database');
 
 
 module.exports = {
-    migrate: async () => {
+    migrate: () => {
         const connection = database.connect();
 
         console.log('Running migrations... \n');
